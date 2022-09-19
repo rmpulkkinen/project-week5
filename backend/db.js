@@ -19,5 +19,18 @@ async function readRecipes() {
   }
 }
 
-module.exports = { readRecipes };
+async function createRecipe(recipe) {
+  let today = new Date();
+  await pool.query(
+    `INSERT INTO recipebook (header, recipe, author, date, imageurl) VALUES ($1, $2, $3, $4, $5)`,
+    [
+      recipe.header,
+      recipe.recipe,
+      recipe.author,
+      today.toISOString(),
+      recipe.imageurl,
+    ]
+  );
+}
+module.exports = { readRecipes, createRecipe };
 //readRecipes();
