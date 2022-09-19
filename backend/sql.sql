@@ -1,3 +1,4 @@
+CREATE DATABASE recipes;
 CREATE SCHEMA schema_recipes;
 CREATE TABLE recipebook (
     id serial PRIMARY KEY;
