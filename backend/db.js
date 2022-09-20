@@ -32,5 +32,11 @@ async function createRecipe(recipe) {
     ]
   );
 }
-module.exports = { readRecipes, createRecipe };
-//readRecipes();
+
+async function likeRecipe(id) {
+  await pool.query(`UPDATE recipebook SET likes = likes +1 WHERE id=$1`, [id]);
+}
+
+//likeRecipe(2);
+
+module.exports = { readRecipes, createRecipe, likeRecipe };

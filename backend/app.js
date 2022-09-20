@@ -1,9 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const port = 3000;
+const port = 4000;
 
-const { readRecipes, createRecipe } = require("./db");
-
+const { readRecipes, createRecipe, likeRecipe } = require("./db");
+app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
@@ -14,6 +15,11 @@ app.get("/", async (req, res) => {
 
 app.post("/recipe", async (req, res) => {
   await createRecipe(req.body);
+  res.sendStatus(200);
+});
+
+app.post("/toggle-favorite/:id", async (req, res) => {
+  await likeRecipe(req.params.id);
   res.sendStatus(200);
 });
 
