@@ -3,8 +3,9 @@ const cors = require("cors");
 const app = express();
 const port = 4000;
 
-const { readRecipes, createRecipe, likeRecipe } = require("./db");
+const { readRecipes, createRecipe, likeRecipe, deleteRecipe } = require("./db");
 app.use(cors());
+app.options("*", cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
