@@ -1,26 +1,26 @@
-const dotenv = require("dotenv");
-dotenv.config();
+const dotenv = require("dotenv")
+dotenv.config()
 
-const { Pool } = require("pg");
+const { Pool } = require("pg")
 const pool = new Pool({
   user: process.env.USER,
   host: process.env.HOST,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-});
+})
 
 async function readRecipes() {
   try {
-    const res = await pool.query(`SELECT * FROM recipebook`);
-    console.log(res.rows);
-    return res.rows;
+    const res = await pool.query(`SELECT * FROM recipebook`)
+    console.log(res.rows)
+    return res.rows
   } catch (err) {
-    console.log(err?.stack);
+    console.log(err?.stack)
   }
 }
 
 async function createRecipe(recipe) {
-  let today = new Date();
+  let today = new Date()
   await pool.query(
     `INSERT INTO recipebook (header, recipe, author, date, imageurl) VALUES ($1, $2, $3, $4, $5)`,
     [
@@ -30,7 +30,13 @@ async function createRecipe(recipe) {
       today.toISOString(),
       recipe.imageurl,
     ]
-  );
+  )
 }
-module.exports = { readRecipes, createRecipe };
+
+async function deleteRecipe(id) {
+  await pool.query("DELETE FROM recipebook WHERE id=$1;", [id])
+  console.log(`Poistettu ID:${id} taulusta recipebook`)
+}
+
+module.exports = { readRecipes, createRecipe, deleteRecipe }
 //readRecipes();
