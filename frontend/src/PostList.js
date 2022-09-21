@@ -109,7 +109,7 @@ const useRecipes = () => {
     handleToggleFavorite: (id) => {
       const newRecipes = clone(recipes);
       const recipe = newRecipes.find((recipe) => recipe.id === id);
-      recipe.isFavorite = !recipe.isFavorite;
+      recipe.likes = recipe.likes + 1;
       setRecipes(newRecipes);
       persistToggleRecipe(apiUrl, id);
     },

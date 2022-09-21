@@ -14,7 +14,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { DeleteOutline } from "@mui/icons-material";
 import MuiMarkdown from "mui-markdown";
-//import { Recipe } from "../../backend/db";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,11 +33,9 @@ export default function RecipeReviewCard({
   imageUrl,
   author,
   date,
-  isFavorite,
   likes,
   intro,
-  likeRecipe,
-  //handleToggleFavorite,
+  handleToggleFavorite,
   handleDelete,
 }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -77,8 +74,7 @@ export default function RecipeReviewCard({
         <IconButton
           aria-label="add to favorites"
           onClick={() => {
-            likeRecipe(id);
-            //handleToggleFavorite(id);
+            handleToggleFavorite(id);
           }}
         >
           <FavoriteIcon color={likes > 0 ? "primary" : "default"} /> {likes}
