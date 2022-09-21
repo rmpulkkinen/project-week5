@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { DeleteOutline } from "@mui/icons-material";
 import MuiMarkdown from "mui-markdown";
@@ -77,7 +77,7 @@ export default function RecipeReviewCard({
             handleToggleFavorite(id);
           }}
         >
-          <FavoriteIcon color={likes > 0 ? "primary" : "default"} /> {likes}
+          <ThumbUpIcon color={likes > 0 ? "primary" : "default"} /> {likes}
         </IconButton>
         <ExpandMore
           expand={expanded}
