@@ -9,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
+import { lightBlue, lightGreen, red } from "@mui/material/colors";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { DeleteOutline } from "@mui/icons-material";
