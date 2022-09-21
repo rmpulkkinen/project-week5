@@ -79,7 +79,7 @@ export default function RecipeReviewCard({
             handleToggleFavorite(id);
           }}
         >
-          <FavoriteIcon color={isFavorite ? "primary" : "default"} /> {likes}
+          <FavoriteIcon color={likes > 0 ? "primary" : "default"} /> {likes}
         </IconButton>
         <ExpandMore
           expand={expanded}
