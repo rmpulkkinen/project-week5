@@ -23,13 +23,14 @@ async function createRecipe(recipe) {
   console.log(recipe);
   let today = new Date();
   await pool.query(
-    `INSERT INTO recipebook (header, recipe, author, date, "imageUrl") VALUES ($1, $2, $3, $4, $5)`,
+    `INSERT INTO recipebook (header, recipe, author, date, "imageUrl", intro) VALUES ($1, $2, $3, $4, $5, $6)`,
     [
       recipe.header,
       recipe.recipe,
       recipe.author,
       today.toISOString(),
       recipe.imageUrl,
+      recipe.intro,
     ]
   );
 }

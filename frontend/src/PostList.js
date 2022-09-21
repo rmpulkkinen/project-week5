@@ -170,7 +170,7 @@ const PostList = ({ show, setShowNewRecipeDialog }) => {
               title={recipe.header}
               recipe={recipe.recipe}
               author={recipe.author}
-              date={recipe.date}
+              date={recipe.date.split("T")[0]}
               id={recipe.id}
               imageUrl={recipe.imageUrl}
               isFavorite={recipe.isFavorite}
