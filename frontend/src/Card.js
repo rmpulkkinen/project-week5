@@ -37,7 +37,8 @@ export default function RecipeReviewCard({
   isFavorite,
   likes,
   intro,
-  handleToggleFavorite,
+  likeRecipe,
+  //handleToggleFavorite,
   handleDelete,
 }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -76,7 +77,8 @@ export default function RecipeReviewCard({
         <IconButton
           aria-label="add to favorites"
           onClick={() => {
-            handleToggleFavorite(id);
+            likeRecipe(id);
+            //handleToggleFavorite(id);
           }}
         >
           <FavoriteIcon color={likes > 0 ? "primary" : "default"} /> {likes}
