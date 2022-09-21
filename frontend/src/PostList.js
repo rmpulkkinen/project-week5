@@ -129,7 +129,7 @@ const useRecipes = () => {
         author,
         date: "20.06.2022",
         imageUrl,
-        isFavorite: false,
+        likes: 0,
         intro,
       };
       newRecipes.push(newRecipe);
