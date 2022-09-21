@@ -174,6 +174,7 @@ const PostList = ({ show, setShowNewRecipeDialog }) => {
               id={recipe.id}
               imageUrl={recipe.imageUrl}
               isFavorite={recipe.isFavorite}
+              likes={recipe.likes}
               intro={recipe.intro}
               handleToggleFavorite={request.handleToggleFavorite}
               handleDelete={request.handleDelete}
