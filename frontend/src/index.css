@@ -8,6 +8,13 @@ body {
   background-image: url("https://us.123rf.com/450wm/prettyvectors/prettyvectors1608/prettyvectors160800022/60532577-food-background-pattern-vector-flat-cartoon-illustration.jpg?ver=6");
 }
 
+h1 {
+  position: relative;
+  color: #fff;
+  font: 900 60px Montserrat;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

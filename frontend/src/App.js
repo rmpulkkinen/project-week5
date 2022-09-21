@@ -14,8 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>This is a heading</h1>
       <Container fixed>
+        <h1>Maailman paras reseptikirja</h1>
         <ApiUrlContext.Provider value={apiUrl}>
           <PostList
             show={showNewDialog}
